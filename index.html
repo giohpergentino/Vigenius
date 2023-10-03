@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <!-- Meta tags -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- title -->
+  <title>Vigenius</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/extends.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="navbar">
+    <div class="navbar__content max-width mb-0">
+      <a href="/">
+        <h2 class="navbar__logo">Vigenius</h2>
+      </a>
+      <ul class="navbar__links">
+        <li><a href="#header">Início</a></li>
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#criptografia">Criptografia</a></li>
+        <li><a href="#footer">Contato</a></li>
+      </ul>
+      <div class="navbar__mobile">
+        <img src="assets/menu.svg" alt="menu" class="burguer" />
+        <ul class="mobile__links">
+          <li><a href="#header">Início</a></li>
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#criptografia">Criptografia</a></li>
+          <li><a href="#footer">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- header -->
+  <header id="header" class="max-width">
+    <div class="header__left">
+      <h1>Where
+        Encryption
+        Meets Genius.</h1>
+      <p>
+        Aprimorar a segurança das suas senhas é uma prática essencial na proteção dos seus dados online. Uma maneira eficaz de fazer isso é através da criptografia.
+      </p>
+      <a href="#about" class="btn btn-primary">Saiba Mais!</a>
+    </div>
+    <div class="header__right">
+      <div class="header__image">
+        <img src="assets/cripto.png" alt="Criptografia" class="giovanna">
+        <img src="assets/abstract.svg" alt="background" class="background">
+      </div>
+    </div>
+  </header>
+
+  <!-- Sobre -->
+  <section id="about" class="about max-width">
+    <div class="about__left">
+      <h2 class="secondary-title">Impotância:</h2>
+      <p>
+        Para melhorar a segurança das suas senhas, é fundamental usar técnicas de criptografia e descriptografia.
+        <br>
+        Quando você criptografa uma senha, ela é convertida em um formato codificado que não pode ser facilmente lido por olhos humanos ou computadores não autorizados. Isso significa que, mesmo que alguém acesse os dados criptografados, as senhas permanecerão seguras, pois o processo de descriptografia exige uma chave específica.
+        </p>
+    </div>
+    <div class="about__right">
+      <h3 class="tertiary-title mb-m">
+        Criptografia e Descriptografia
+      </h3>
+      <p>
+        Para melhorar a segurança das suas senhas, é fundamental usar técnicas de criptografia e descriptografia. A criptografia é o processo de transformar informações legíveis em um formato ilegível, enquanto a descriptografia é o processo reverso, que permite recuperar as informações originais a partir do formato ilegível.
+        <br>
+        A chave de descriptografia é uma parte essencial desse processo, pois é necessária para transformar os dados criptografados de volta em seu formato original. Portanto, ao adotar a criptografia e descriptografia, você fortalece a segurança das suas senhas, protegendo-as contra possíveis ameaças online.
+      </p>
+    </div>
+  </section>
+
+  <!-- criptografia -->
+  <section id="criptografia" class="skills">
+    <div class="skills__content max-width">
+      <h2 class="tertiary-title">Criptografia</h2>
+      <input type="text" id="passwordInput">
+    <button onclick="encryptPassword()">Criptografar</button>
+    <p><b>Senha Criptografada:</b> <span id="encryptedPassword"></span></p>
+    <br>
+    <h2 class="tertiary-title">Descriptografia</h2>
+    <input type="text" id="encryptedPasswordInput">
+    <button onclick="decryptPassword()">Descriptografar</button>
+    <p><b>Senha Descriptografada:</b> <span id="decryptedPassword"></span></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer__content max-width mb-0">
+      <h2 class="tertiary-title mb-s">Contato:</h2>
+      <div class="footer__contact mb-m">
+        <span class="mb-m">Giovanna Pergentino - 01565341</span>
+        <span class="mb-m">Nívea Paulina - 01358634</span>
+        <span class="mb-m">Paulo Octaviavo - 01527633</span>
+        <span class="mb-m">Luís Felipe Torres - 01527238</span>
+        <span class="mb-m">João Victor Carvalho - 01549930</span>
+      </div>
+      <ul class="mb-l">
+        <li>
+          <a ><img src="assets/gmail.svg" target="_blank" alt="E-mail" /></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/giovannapergentino"><img src="assets/linkedin.svg" target="_blank" alt="Linkedin" /></a>
+        </li>
+        <li>
+          <a href="https://github.com/giohpergentino" target="_blank"><img src="assets/github.svg" alt="GitHub"></a>
+        </li>
+      </ul>
+      <p class="footer__copyright">
+        © 2023 Vigenius. Todos os direitos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <!-- script -->
+  <script src="scripts/index.js"></script>
+</body>
+
+</html>
