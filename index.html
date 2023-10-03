@@ -77,9 +77,9 @@
         Criptografia e Descriptografia
       </h3>
       <p>
-        Para melhorar a segurança das suas senhas, é fundamental usar técnicas de criptografia e descriptografia. A criptografia é o processo de transformar informações legíveis em um formato ilegível, enquanto a descriptografia é o processo reverso, que permite recuperar as informações originais a partir do formato ilegível.
+        A cifra de Vigènere é um método de criptografia que utiliza uma série de diferentes "cifras de César" com base nas letras de uma palavra-chave. Em uma cifra de César, cada letra da passagem é movida de posição um certo número de letras, para ser substituída pela letra correspondente. Por exemplo, isto significa que em um deslocamento de três posições em uma cifra de César
         <br>
-        A chave de descriptografia é uma parte essencial desse processo, pois é necessária para transformar os dados criptografados de volta em seu formato original. Portanto, ao adotar a criptografia e descriptografia, você fortalece a segurança das suas senhas, protegendo-as contra possíveis ameaças online.
+        A se tornaria D; B se tornaria E; C se tornaria F, etc. A cifra de Vigènere baseia-se neste método, utilizando várias cifras de César em diferentes pontos da mensagem. Este programa criptografa e descriptografa usando o algoritmo.
       </p>
     </div>
   </section>
@@ -88,12 +88,14 @@
   <section id="criptografia" class="skills">
     <div class="skills__content max-width">
       <h2 class="tertiary-title">Criptografia</h2>
-      <input type="text" id="passwordInput">
+      <input type="text" id="passwordInput" placeholder="Senha..">
+      <input type="text" id="passwordInput" placeholder="Chave da Senha..">
     <button onclick="encryptPassword()">Criptografar</button>
-    <p><b>Senha Criptografada:</b> <span id="encryptedPassword"></span></p>
+    <p><b>Senha Criptografada:</b> <span id="encryptedPassword" ></span></p>
     <br>
     <h2 class="tertiary-title">Descriptografia</h2>
-    <input type="text" id="encryptedPasswordInput">
+    <input type="text" id="encryptedPasswordInput" placeholder= "Senha Criptografada..">
+    <input type="text" id="encryptedPasswordInput" placeholder= "Chave da Senha..">
     <button onclick="decryptPassword()">Descriptografar</button>
     <p><b>Senha Descriptografada:</b> <span id="decryptedPassword"></span></p>
     </div>
