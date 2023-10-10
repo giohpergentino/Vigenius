@@ -7,10 +7,9 @@
     background-color: var(--white);
 }
 
-.navbar__logo {
+#logo {
     position: relative;
-    color: #02073E;
-    font-size: 30px;
+    height: 10vh;
 }
 
 .navbar .navbar__content {

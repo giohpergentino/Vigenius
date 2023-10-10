@@ -11,20 +11,59 @@ window.addEventListener('scroll', function () {
   return navbar.classList.remove('active');
 });
 
-//criptografia e descriptografia
+function generateKey(str, key) {
+  key = key.split("");
+  if (str.length == key.length)
+      return key.join("");
+  else {
+      let temp = key.length;
+      for (let i = 0; i < str.length - temp; i++) {
+          key.push(key[i % key.length]);
+      }
+  }
+  return key.join("");
+}
+
+function cipherText(str, key) {
+  let cipher_text = "";
+
+  for (let i = 0; i < str.length; i++) {
+      let x = (str[i].charCodeAt(0) + key[i].charCodeAt(0) - 2 * 'a'.charCodeAt(0)) % 26;
+      x += 'a'.charCodeAt(0);
+      cipher_text += String.fromCharCode(x);
+  }
+  return cipher_text;
+}
+
+function originalText(cipher_text, key) {
+  let orig_text = "";
+
+  for (let i = 0; i < cipher_text.length; i++) {
+      let x = (cipher_text[i].charCodeAt(0) - key[i].charCodeAt(0) + 26) % 26;
+      x += 'a'.charCodeAt(0);
+      orig_text += String.fromCharCode(x);
+  }
+  return orig_text;
+}
 
 function encryptPassword() {
-  const passwordInput = document.getElementById('passwordInput').value;
-  const encryptedPassword = CryptoJS.AES.encrypt(passwordInput, 'chave-secreta').toString();
-  document.getElementById('encryptedPassword').textContent = encryptedPassword;
+  let str = document.getElementById('passwordInput').value;
+  let keyword = document.getElementById('keyInput').value;
+
+  let key = generateKey(str, keyword);
+
+  let cipher_text = cipherText(str, key);
+
+  document.getElementById('encryptedPassword').textContent = cipher_text;
 }
 
 function decryptPassword() {
-  const encryptedPasswordInput = document.getElementById('encryptedPasswordInput').value;
-  try {
-      const decryptedPassword = CryptoJS.AES.decrypt(encryptedPasswordInput, 'chave-secreta').toString(CryptoJS.enc.Utf8);
-      document.getElementById('decryptedPassword').textContent = decryptedPassword;
-  } catch (error) {
-      document.getElementById('decryptedPassword').textContent = 'Erro ao descriptografar a senha';
-  }
+  let encryptedText = document.getElementById('encryptedPasswordInput').value;
+  let decryptionKey = document.getElementById('decryptionKeyInput').value;
+
+  let key = generateKey(encryptedText, decryptionKey);
+
+  let decryptedText = originalText(encryptedText, key);
+
+  document.getElementById('decryptedPassword').textContent = decryptedText;
 }
